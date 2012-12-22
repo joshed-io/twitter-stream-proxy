@@ -8,6 +8,11 @@ A registered Twitter app, and the CONSUMER_KEY and CONSUMER_SECRET
 environment variables properly set. Because you'll need to set those variables,
 run this only on a trusted server.
 
+Set the ALLOWED_ORIGINS environment variable. This determines what hosts can
+connect to your proxy server. For local development,
+you might set a value of `localhost:*`. When you deploy, make sure
+to include the correct value in your environment.
+
 The client making the socket connection must provide a valid
 OAuth access token and OAuth access token secret, created by the Twitter app
 you've specified in the environment.

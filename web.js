@@ -1,6 +1,7 @@
 var io = require('socket.io').listen(parseInt(process.env.PORT)),
     twitter = require('ntwitter')
 
+io.set("origins", process.env.ALLOWED_ORIGINS)
 io.set("log level", 2)
 io.sockets.on("connection", function(socket) {
   socket.on("userstream", function(data) {
