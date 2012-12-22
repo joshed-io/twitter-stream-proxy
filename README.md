@@ -45,3 +45,6 @@ If you plan to use it in production, there are probably terms of service and
 security issues that you'll want to think through first. And you'd definitely
 want to use SSL for the socket connection since you're passing tokens.
 
+### License
+
+See license file.
