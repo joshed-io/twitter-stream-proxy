@@ -1,0 +1,9 @@
+{
+  "name": "twitter-stream-proxy",
+  "author": "Josh Dzielak",
+  "version": "0.1.0",
+  "dependencies": {
+    "socket.io": "0.9.13",
+    "ntwitter": "0.5.0"
+  }
+}
