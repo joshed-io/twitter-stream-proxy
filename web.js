@@ -17,9 +17,23 @@ io.sockets.on("connection", function(socket) {
       tweetStream.on('data', function(tweet) {
         socket.emit('tweet', tweet)
       })
+
+      // if twitter or network failure happens, just
+      // kill the and let the client manage retries
+      tweetStream.on("end", function() {
+        socket.disconnect()
+      })
+      tweetStream.on("destroy", function() {
+        socket.disconnect()
+      })
+      tweetStream.on("error", function() {
+        socket.disconnect()
+      })
     })
   })
   socket.on("disconnect", function() {
-    tweetStream.destroy()
+    if (tweetStream) {
+      tweetStream.destroy()
+    }
   })
 })
